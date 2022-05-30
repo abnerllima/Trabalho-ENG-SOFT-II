@@ -39,5 +39,19 @@ public class MainControl {
 		
 	}
 	
+	public void printarMenu(){
+		System.out.print("############# CLINICA MEDICA #############"
+				+ "\n1. Cadastrar paciente"
+				+ "\n2. Cadastrar medico"
+				+ "\n3. Agendar consulta"
+				+ "\n4. Ver lista de pacientes"
+				+ "\n5. Ver lista de medicos"
+				+ "\n6. Ver agenda"
+				+ "\n0. SAIR"
+				+ "\n\nDigite a opcao desejada: ");
+	}
 
+	public void printarTitulo(String titulo){
+		System.out.print("\n############# " + titulo + " #############\n");
+	}
 }
