@@ -10,6 +10,7 @@ public class MedicoControl {
 	private int id;
 	
 	public MedicoControl() {
+		
 		this.id = 1;
 	}
 	
@@ -20,17 +21,22 @@ public class MedicoControl {
 	}
 	
 
-	public void addMedico(String nome, String cpf, String contato, String crm, String especializacao) {
+	public void registrarMedico(String nome, String cpf, String contato, String crm, String especializacao) {
 
-		Medico aux = new Medico(nome, cpf, contato, crm, especializacao, this.id);
-		listaMedicos.add(aux);
-		this.id++;
+		Medico novoMedico = new Medico(nome, cpf, contato, crm, especializacao, this.id);
 		
-		for(int i = 0; i < this.listaMedicos.size(); i++) {
-			System.out.println("NOME: " + this.listaMedicos.get(i).getNome() + " | ID: " +
-					this.listaMedicos.get(i).getId() + "\n");
-		}
+		listaMedicos.add(novoMedico);
+		
+		this.id++;
 		
 	}
 	
+	public void listarMedico() {
+		
+		for(int index = 0; index < this.listaMedicos.size(); index++) {
+			
+			System.out.println("NOME: " + this.listaMedicos.get(index).getNome() + " | ID: " +
+					this.listaMedicos.get(index).getId() + "\n");
+		}
+	}	
 }
