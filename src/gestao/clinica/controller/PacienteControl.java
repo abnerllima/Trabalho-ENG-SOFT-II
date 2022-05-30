@@ -20,19 +20,23 @@ public class PacienteControl {
 		
 	}
 	
-	public void addPaciente(String nome, String cpf, String contato, String historico) {
+	public void registrarPaciente(String nome, String cpf, String contato, String historico) {
 		
-		Paciente aux = new Paciente(nome, cpf, contato, historico, this.id);
+		Paciente novoPaciente = new Paciente(nome, cpf, contato, historico, this.id);
 		
-		listaPacientes.add(aux);
+		listaPacientes.add(novoPaciente);
 		
 		this.id++;
-		
-		for(int i = 0; i < this.listaPacientes.size(); i++) {
-			System.out.println("NOME: " + this.listaPacientes.get(i).getNome() + " | ID: " +
-					this.listaPacientes.get(i).getId() + "\n");
-		}
 	
+	}
+	
+	public void listarPaciente() {
+		
+		for(int index = 0; index < this.listaPacientes.size(); index++) {
+			
+			System.out.println("NOME: " + this.listaPacientes.get(index).getNome() + " | ID: " +
+					this.listaPacientes.get(index).getId() + "\n");
+		}
 	}
 
 }
