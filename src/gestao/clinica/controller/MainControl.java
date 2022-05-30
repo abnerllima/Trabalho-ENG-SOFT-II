@@ -11,24 +11,25 @@ public class MainControl {
 	private ArrayList<Exame> listaExames = new ArrayList<>();
 	
 	
-	//Ver consultas
 	public Consulta getConsulta(int n) {
 		
 		return this.listaConsultas.get(n);
 	}
 	
-	//Agendar consulta
 	public void agendarConsulta(String data, int idMedico, int idPaciente) {
 		
-		Consulta aux = new Consulta(data, idMedico, idPaciente);
-		listaConsultas.add(aux);
-		
-		for(int i = 0; i < this.listaConsultas.size(); i++) {
-			
-			System.out.println("PACIENTE: " + this.listaConsultas.get(i).getIdPaciente() + " | MEDICO: " +
-					listaConsultas.get(i).getIdMedico() + " | DATA: " + listaConsultas.get(i).getData() + "\n");
-		}
+		Consulta novaConsulta = new Consulta(data, idMedico, idPaciente);
+		listaConsultas.add(novaConsulta);
 
+	}
+	
+	public void listarConsultas() {
+	
+		for(int index = 0; index < this.listaConsultas.size(); index++) {
+			
+			System.out.println("PACIENTE: " + this.listaConsultas.get(index).getIdPaciente() + " | MEDICO: " +
+					listaConsultas.get(index).getIdMedico() + " | DATA: " + listaConsultas.get(index).getData() + "\n");
+		}
 	}
 	
 	public void arquivarExame(String nomeExame, int id_paciente) {
