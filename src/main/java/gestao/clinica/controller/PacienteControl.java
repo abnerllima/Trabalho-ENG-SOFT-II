@@ -1,8 +1,8 @@
-package gestao.clinica.controller;
+package main.java.gestao.clinica.controller;
 
 import java.util.ArrayList;
 
-import gestao.clinica.model.Paciente;
+import main.java.gestao.clinica.model.Paciente;
 
 public class PacienteControl {
 	
@@ -30,13 +30,19 @@ public class PacienteControl {
 	
 	}
 	
-	public void listarPaciente() {
+	public int listarPaciente() {
 		
-		for(int index = 0; index < this.listaPacientes.size(); index++) {
-			
-			System.out.println("NOME: " + this.listaPacientes.get(index).getNome() + " | ID: " +
-					this.listaPacientes.get(index).getId() + "\n");
-		}
+	    int size = 0;
+	    
+	    for(int index = 0; index < this.listaPacientes.size(); index++) {
+	        
+	        System.out.println("NOME: " + this.listaPacientes.get(index).getNome() + " | ID: " +
+	                this.listaPacientes.get(index).getId() + "\n");
+	        
+	        size++;
+	    }
+	    
+	    return size;
 	}
 
 }

@@ -1,8 +1,8 @@
-package gestao.clinica.controller;
+package main.java.gestao.clinica.controller;
 
 import java.util.ArrayList;
 
-import gestao.clinica.model.Medico;
+import main.java.gestao.clinica.model.Medico;
 
 public class MedicoControl {
 	
@@ -31,12 +31,17 @@ public class MedicoControl {
 		
 	}
 	
-	public void listarMedico() {
+	public int listarMedico() {
+		
+		int size = 0;
 		
 		for(int index = 0; index < this.listaMedicos.size(); index++) {
 			
 			System.out.println("NOME: " + this.listaMedicos.get(index).getNome() + " | ID: " +
 					this.listaMedicos.get(index).getId() + "\n");
+			
+			size++;
 		}
-	}	
+		return size;
+	}		
 }
