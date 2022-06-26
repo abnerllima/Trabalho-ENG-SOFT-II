@@ -1,8 +1,8 @@
-package main.java.gestao.clinica.controller;
+package gestao.clinica.controller;
 
 import java.util.ArrayList;
 
-import main.java.gestao.clinica.model.Paciente;
+import gestao.clinica.model.Paciente;
 
 public class PacienteControl {
 	

@@ -1,4 +1,4 @@
-package test.java.integracao;
+package integracao;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import main.java.gestao.clinica.controller.*;
-import main.java.gestao.clinica.model.*;
+import gestao.clinica.controller.*;
+import gestao.clinica.model.*;
 
 public class ConsultaPacientesTest {
 	
