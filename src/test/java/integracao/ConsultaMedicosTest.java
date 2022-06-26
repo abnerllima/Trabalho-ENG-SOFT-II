@@ -1,37 +1,39 @@
-package teste.integracao;
+package test.java.integracao;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import main.java.gestao.clinica.controller.*;
 import main.java.gestao.clinica.model.*;
+import main.java.gestao.clinica.controller.*;
 
-public class ConsultaPacientesTest {
+public class ConsultaMedicosTest {
 	
 	final String NOME = "Pedro";
 	final String CPF = "12345678910";
 	final String CONTATO = "987654321";
-	final String HISTORICO = "enfermo";
+	final String CRM = "10000";
+	final String ESPECIALIZACAO = "doutor";
 	
 	int tamanhoLista = 0;
 	
 	ArrayList<Medico> LISTA_MEDICOS = new ArrayList<>();
 	
-	PacienteControl pacienteControl = new PacienteControl(); 
+	MedicoControl medicoControl = new MedicoControl(); 
 	
 	@Test
 	public void testAgendarConsulta() {
 		
-		pacienteControl.registrarPaciente(NOME, CPF, CONTATO, HISTORICO);
-		pacienteControl.registrarPaciente(NOME, CPF, CONTATO, HISTORICO);
+		medicoControl.registrarMedico(NOME, CPF, CONTATO, CRM, ESPECIALIZACAO);
+		medicoControl.registrarMedico(NOME, CPF, CONTATO, CRM, ESPECIALIZACAO);
 		
-		this.tamanhoLista = pacienteControl.listarPaciente();
+		this.tamanhoLista = medicoControl.listarMedico();
 		
 		assertTrue(this.tamanhoLista > 0, "consulta marcada");
 		assertEquals(this.tamanhoLista, 2, "tamanho agenda");
 	}
+
 }

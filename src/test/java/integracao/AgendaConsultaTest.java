@@ -1,4 +1,4 @@
-package teste.integracao;
+package test.java.integracao;
 
 import static org.junit.jupiter.api.Assertions.*;
 

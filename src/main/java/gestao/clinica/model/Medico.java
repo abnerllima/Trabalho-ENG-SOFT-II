@@ -1,6 +1,4 @@
-package gestao.clinica.model;
-
-import java.util.ArrayList;
+package main.java.gestao.clinica.model;
 
 public class Medico extends Pessoa{
 	

@@ -1,4 +1,4 @@
-package gestao.clinica.model;
+package main.java.gestao.clinica.model;
 
 import java.util.ArrayList;
 
