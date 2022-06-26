@@ -9,6 +9,14 @@
 
 Desenvolver um pequeno sistema, analisar a qualidade e refatorar.
 
+### Etapas 2 e 3
+
+Exercitar testes de unidade/integração/sistema e CI/CD:
+
+- Implementar 15 testes de unidade
+- Implementar 5 testes de integração ou de sistema (e2e)
+- Utilizar CI/CD (Através de actions do GitHub)
+
 ## Sobre o sistema
 
 O Sistema de Gestão de Clínica Médica foi desenvolvido para dar suporte 
