@@ -27,15 +27,23 @@ public class Paciente extends Pessoa{
 	}
 	
 	
-	public void agendarConsulta(int id_medico, String data, ArrayList<Consulta> listaConsultas, ArrayList<Medico> listaMedico) {
+	public boolean agendarConsulta(int id_medico, String data, ArrayList<Consulta> listaConsultas, ArrayList<Medico> listaMedico) {
 		
-		Consulta consulta = new Consulta(data, id_medico, this.getId());
+		for (int i = 0; i < listaConsultas.size(); i++) {
+			
+			if (listaConsultas.get(i).getIdMedico() == id_medico 
+					&& listaConsultas.get(i).getData() == data) {
+				
+						return false;
+				}
+		    }
+
+		Consulta novaConsulta = new Consulta(data, id_medico, this.getId());
+		listaConsultas.add(novaConsulta);
 		
-		//Atualiza as listas de usuarios.
-		listaConsultas.add(consulta);
-//		listaMedico.get(id_medico).consultasAgendadas.add(consulta);
+		this.consultasAgendadas.add(novaConsulta);
 		
-		this.consultasAgendadas.add(consulta);
+		return true;
 		
 	}
 

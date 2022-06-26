@@ -16,11 +16,20 @@ public class MainControl {
 		return this.listaConsultas.get(n);
 	}
 	
-	public void agendarConsulta(String data, int idMedico, int idPaciente) {
-		
+				
+		for (int i = 0; i < listaConsultas.size(); i++) {
+			
+			if (listaConsultas.get(i).getIdMedico() == idMedico 
+					&& listaConsultas.get(i).getData() == data) {
+				
+						return false;
+				}
+		    }
+
 		Consulta novaConsulta = new Consulta(data, idMedico, idPaciente);
 		listaConsultas.add(novaConsulta);
-
+		
+		return true;
 	}
 	
 	public void listarConsultas() {

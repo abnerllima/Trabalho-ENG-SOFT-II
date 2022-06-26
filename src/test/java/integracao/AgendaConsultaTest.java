@@ -30,19 +30,37 @@ public class AgendaConsultaTest {
 	MedicoControl medicoControl = new MedicoControl();
 	
 	@Test
-	public void testAgendarConsulta() {
+	public void testConsultarAgenda() {
+		
+		pacienteControl.registrarPaciente(NOME, CPF, CONTATO, HISTORICO);
+		medicoControl.registrarMedico(NOME, CPF, CONTATO, CRM, ESPECIALIZACAO);
+		
+		Paciente paciente = new Paciente(NOME, CPF, CONTATO, HISTORICO, ID);
+				
+		boolean consultaMarcada = paciente.agendarConsulta(this.ID_MEDICO, this.DATA, this.LISTA_CONSULTAS, this.LISTA_MEDICOS);
+		
+		mainControl.agendarConsulta(DATA, ID_MEDICO, ID);
+		
+		assertTrue(consultaMarcada, "consulta marcada");
+		assertEquals(1, paciente.consultasAgendadas.size(), "tamanho agenda");
+	}
+	
+	@Test
+	public void testAgendarConsultaInvalida() {
 		
 		pacienteControl.registrarPaciente(NOME, CPF, CONTATO, HISTORICO);
 		medicoControl.registrarMedico(NOME, CPF, CONTATO, CRM, ESPECIALIZACAO);
 		
 		mainControl.agendarConsulta(DATA, ID_MEDICO, ID);
 		
+		mainControl.agendarConsulta(DATA, ID_MEDICO, ID);
+		
 		Paciente paciente = new Paciente(NOME, CPF, CONTATO, HISTORICO, ID);
 				
-		paciente.agendarConsulta(this.ID_MEDICO, this.DATA, this.LISTA_CONSULTAS, this.LISTA_MEDICOS);
+		boolean consultaMarcada = paciente.agendarConsulta(this.ID_MEDICO, this.DATA, this.LISTA_CONSULTAS, this.LISTA_MEDICOS);
 		
-		assertTrue(paciente.consultasAgendadas.size() > 0, "consulta marcada");
-		assertEquals(1, paciente.consultasAgendadas.size(), "tamanho agenda");
+		assertFalse(consultaMarcada, "consulta invalida");
+		assertEquals(paciente.consultasAgendadas.size(), 0, "quantidade de consultas do paciente");
 	}
 
 }
