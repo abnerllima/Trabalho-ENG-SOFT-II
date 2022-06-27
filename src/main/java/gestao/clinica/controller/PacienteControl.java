@@ -30,6 +30,22 @@ public class PacienteControl {
 	
 	}
 	
+	public boolean removerPaciente(int id) {
+		
+		for(int index = 0; index < this.listaPacientes.size(); index++) {
+			
+			if(this.listaPacientes.get(index).getId() == id) {
+				
+				this.listaPacientes.remove(id - 1);
+				
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
+	
 	public int listarPaciente() {
 		
 	    int size = 0;

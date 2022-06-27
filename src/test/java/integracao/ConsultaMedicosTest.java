@@ -25,15 +25,15 @@ public class ConsultaMedicosTest {
 	MedicoControl medicoControl = new MedicoControl(); 
 	
 	@Test
-	public void testAgendarConsulta() {
+	public void testConsultarMedicoCadastrado() {
 		
 		medicoControl.registrarMedico(NOME, CPF, CONTATO, CRM, ESPECIALIZACAO);
 		medicoControl.registrarMedico(NOME, CPF, CONTATO, CRM, ESPECIALIZACAO);
 		
 		this.tamanhoLista = medicoControl.listarMedico();
 		
-		assertTrue(this.tamanhoLista > 0, "consulta marcada");
-		assertEquals(this.tamanhoLista, 2, "tamanho agenda");
+		assertTrue(this.tamanhoLista > 0, "lista não vazia");
+		assertEquals(this.tamanhoLista, 2, "tamanho cadastro");
 	}
 
 }

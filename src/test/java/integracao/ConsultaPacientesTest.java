@@ -31,7 +31,19 @@ public class ConsultaPacientesTest {
 		
 		this.tamanhoLista = pacienteControl.listarPaciente();
 		
-		assertTrue(this.tamanhoLista > 0, "consulta marcada");
-		assertEquals(this.tamanhoLista, 2, "tamanho agenda");
+		assertEquals(this.tamanhoLista, 2, "tamanho lista");
+	}
+	
+	@Test
+	public void testconsultarPacienteRemovido() {
+		
+		pacienteControl.registrarPaciente(NOME, CPF, CONTATO, HISTORICO);
+		pacienteControl.registrarPaciente(NOME, CPF, CONTATO, HISTORICO);
+		
+		pacienteControl.removerPaciente(1);
+		
+		this.tamanhoLista = pacienteControl.listarPaciente();
+		
+		assertEquals(this.tamanhoLista, 1, "tamanho lista");
 	}
 }
