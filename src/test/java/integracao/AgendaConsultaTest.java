@@ -57,7 +57,7 @@ public class AgendaConsultaTest {
 		
 		Paciente paciente = new Paciente(NOME, CPF, CONTATO, HISTORICO, ID);
 				
-		boolean consultaMarcada = paciente.agendarConsulta(this.ID_MEDICO, this.DATA, this.LISTA_CONSULTAS, this.LISTA_MEDICOS);
+		boolean consultaMarcada = paciente.agendarConsulta(this.ID_MEDICO, this.DATA, mainControl.listarConsultas(), this.LISTA_MEDICOS);
 		
 		assertFalse(consultaMarcada, "consulta invalida");
 		assertEquals(paciente.consultasAgendadas.size(), 0, "quantidade de consultas do paciente");

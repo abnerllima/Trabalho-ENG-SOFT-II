@@ -16,6 +16,7 @@ public class MainControl {
 		return this.listaConsultas.get(n);
 	}
 	
+	public boolean agendarConsulta(String data, int idMedico, int idPaciente) {
 				
 		for (int i = 0; i < listaConsultas.size(); i++) {
 			
@@ -32,13 +33,15 @@ public class MainControl {
 		return true;
 	}
 	
-	public void listarConsultas() {
+	public ArrayList<Consulta> listarConsultas() {
 	
 		for(int index = 0; index < this.listaConsultas.size(); index++) {
 			
 			System.out.println("PACIENTE: " + this.listaConsultas.get(index).getIdPaciente() + " | MEDICO: " +
 					listaConsultas.get(index).getIdMedico() + " | DATA: " + listaConsultas.get(index).getData() + "\n");
 		}
+		
+		return this.listaConsultas;
 	}
 	
 	public void arquivarExame(String nomeExame, int id_paciente) {
